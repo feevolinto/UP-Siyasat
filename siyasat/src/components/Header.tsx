@@ -13,7 +13,6 @@ export default function Header({ onNavigate }: HeaderProps) {
         className="flex items-center gap-4 cursor-pointer group"
         onClick={() => onNavigate("home")}
       >
-        {/* UPDATED: Pointing to the SVG in your public folder */}
         <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center drop-shadow-xl group-hover:scale-105 transition-transform">
           <img
             src="/upminlogo.svg"
