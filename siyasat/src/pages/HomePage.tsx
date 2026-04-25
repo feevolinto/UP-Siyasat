@@ -25,13 +25,13 @@ export default function HomePage({ recentTheses, onViewAll }: HomePageProps) {
           
           {/* Skewed Maroon Container
           */}
-          <div className="absolute top-0 left-[38%] md:left-[50%] w-[150%] h-full origin-bottom-left skew-x-[26deg] bg-gradient-to-b rounded-bl-[80px] from-[#8A1538]/90 to-[#24050F]/90"></div>
+          <div className="absolute top-0 left-[38%] md:left-[50%] w-[150%] h-full origin-bottom-left skew-x-[26deg] bg-gradient-to-b rounded-bl-[80px] from-[#8A1538]/90 to-[#24050F]/90 shadow-[0_0_50px_rgba(0,0,0,0.5)]"></div>
         </div>
 
         {/* 3. Green Shape Layer
         */}
         <div 
-          className="absolute top-[20%] md:top-[18%] left-[-25%] md:left-[-20%] w-[65%] md:w-[69%] bottom-0 bg-gradient-to-b from-[#198754]/90 to-[#062115]/90 origin-bottom-left skew-x-[26deg] rounded-tr-[40px] md:rounded-tr-[80px] z-20 shadow-[10px_0_30px_rgba(0,0,0,0.3)]"
+          className="absolute top-[20%] md:top-[18%] left-[-25%] md:left-[-20%] w-[65%] md:w-[69%] bottom-0 bg-gradient-to-b from-[#198754]/90 to-[#062115]/90 origin-bottom-left skew-x-[26deg] rounded-tr-[40px] md:rounded-tr-[80px] z-20 shadow-[15px_0_40px_rgba(0,0,0,0.4)]"
         ></div>
 
         {/* 4. Hero Text Content */}
