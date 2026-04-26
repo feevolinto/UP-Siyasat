@@ -1,40 +1,42 @@
 import React from 'react';
+import { Search } from 'lucide-react';
 import type { Thesis } from '../types';
 import ThesisCard from '../components/ThesisCard';
+import Sidebar from '../components/Sidebar';
+import type { ViewState } from '../types';
 
 interface HomePageProps {
   recentTheses: Thesis[];
   onViewAll: () => void;
+  onNavigate: (view: ViewState) => void;
+  onRead: (id: string) => void; 
 }
 
-export default function HomePage({ recentTheses, onViewAll }: HomePageProps) {
+export default function HomePage({ recentTheses, onViewAll, onNavigate, onRead }: HomePageProps) {
   return (
     <div className="w-full">
       
       {/* Hero Section */}
       <div className="relative w-full h-[550px] md:h-[650px] bg-white overflow-hidden">
         
-        {/* 1. Base Image Layer (Full height - 100%) */}
+        {/* Base Image Layer*/}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url("/upmin.png")' }}
         ></div>
         
-        {/* 2. Maroon Layer Wrapper */}
+        {/* Maroon Layer Wrapper */}
         <div className="absolute top-0 left-0 w-full h-[84%] rounded-br-[150px] md:rounded-br-[0px] overflow-hidden z-10">
-          
-          {/* Skewed Maroon Container
-          */}
+          {/* Skewed Maroon Container */}
           <div className="absolute top-0 left-[38%] md:left-[50%] w-[150%] h-full origin-bottom-left skew-x-[26deg] bg-gradient-to-b rounded-bl-[80px] from-[#8A1538]/90 to-[#24050F]/90 shadow-[0_0_50px_rgba(0,0,0,0.5)]"></div>
         </div>
 
-        {/* 3. Green Shape Layer
-        */}
+        {/* Green Shape Layer */}
         <div 
           className="absolute top-[20%] md:top-[18%] left-[-25%] md:left-[-20%] w-[65%] md:w-[69%] bottom-0 bg-gradient-to-b from-[#198754]/90 to-[#062115]/90 origin-bottom-left skew-x-[26deg] rounded-tr-[40px] md:rounded-tr-[80px] z-20 shadow-[15px_0_40px_rgba(0,0,0,0.4)]"
         ></div>
 
-        {/* 4. Hero Text Content */}
+        {/* Hero Text Content */}
         <div className="relative z-30 h-[88%] flex flex-col items-end justify-center px-8 md:px-16 text-right w-full max-w-7xl mx-auto pt-16">
           <h2 className="text-3xl md:text-4xl text-white tracking-[0.3em] font-optima mb-2 pr-2 drop-shadow-md">
             UP MINDANAO
@@ -52,7 +54,7 @@ export default function HomePage({ recentTheses, onViewAll }: HomePageProps) {
           </div>
         </div>
 
-        {/* 6. Bottom Maroon Bar */}
+        {/* Bottom Maroon Bar */}
         <div className="absolute bottom-0 left-0 w-full h-6 md:h-8 bg-gradient-to-r from-[#1A0305] via-[#4A0A0C] to-[#7A1114] z-40 shadow-inner"></div>
       </div>
 
@@ -64,7 +66,11 @@ export default function HomePage({ recentTheses, onViewAll }: HomePageProps) {
           <h3 className="text-[#115740] font-optima font-bold text-xl mb-6">RECENTLY ADDED</h3>
           <div className="space-y-4">
             {recentTheses.slice(0, 3).map((thesis, idx) => (
-              <ThesisCard key={idx} thesis={thesis} />
+              <ThesisCard 
+                key={idx} 
+                thesis={thesis} 
+                onClick={() => onRead(thesis.id)} 
+              />
             ))}
           </div>
           <button 
@@ -76,23 +82,8 @@ export default function HomePage({ recentTheses, onViewAll }: HomePageProps) {
         </div>
 
         {/* Right Column: Browse */}
-        <div>
-          <h3 className="text-[#7A1114] font-optima font-bold text-xl mb-6">BROWSE</h3>
-          <ul className="space-y-3 text-sm text-gray-600">
-            <li>
-              <button 
-                onClick={onViewAll} 
-                className="hover:text-[#7A1114] hover:underline text-left w-full"
-              >
-                Undergraduate Theses
-              </button>
-            </li>
-            <li>
-              <button className="hover:text-[#7A1114] hover:underline text-left w-full">
-                Faculty Theses
-              </button>
-            </li>
-          </ul>
+        <div className="lg:col-span-1">
+          <Sidebar onNavigate={onNavigate} />
         </div>
 
       </div>

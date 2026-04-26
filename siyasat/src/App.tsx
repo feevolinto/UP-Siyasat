@@ -26,7 +26,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-800 relative flex flex-col">
       {/* Header stays absolute at the very top */}
-      <Header onNavigate={handleNavigate} />
+      <Header onNavigate={handleNavigate} currentView={currentView}/>
 
       {/* Full width content area wrapper */}
       <div className="flex-1 w-full">
@@ -36,6 +36,8 @@ export default function App() {
           <HomePage 
             recentTheses={mockTheses} 
             onViewAll={() => handleNavigate('list')} 
+            onNavigate={setCurrentView} 
+            onRead={handleRead}
           />
         )}
 

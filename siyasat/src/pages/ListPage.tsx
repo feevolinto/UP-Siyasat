@@ -20,7 +20,7 @@ export default function ListPage({ theses, onRead }: ListPageProps) {
       
       {/* Header & Filters */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b-2 border-gray-100 pb-5 mb-8 gap-6">
-        <h3 className="text-[#7A1114] font-serif font-bold text-2xl tracking-wide">
+        <h3 className="text-[#7A1114] font-optima font-bold text-2xl tracking-wide">
           UNDERGRADUATE THESES
         </h3>
         

@@ -11,7 +11,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
     <aside className="w-full space-y-10">
       {/* Browse Section */}
       <div>
-        <h3 className="text-[#7A1114] font-serif font-bold text-lg border-b-2 border-gray-100 pb-3 mb-5">BROWSE</h3>
+        <h3 className="text-[#7A1114] font-optima font-bold text-lg border-b-2 border-gray-100 pb-3 mb-5">BROWSE</h3>
         <ul className="space-y-3 text-sm text-gray-700">
           <li>
             <button 
@@ -36,7 +36,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
 
       {/* Search Section */}
       <div>
-        <h3 className="text-[#7A1114] font-serif font-bold text-lg border-b-2 border-gray-100 pb-3 mb-5">SEARCH</h3>
+        <h3 className="text-[#7A1114] font-optima font-bold text-lg border-b-2 border-gray-100 pb-3 mb-5">SEARCH</h3>
         <div className="space-y-3">
           <label className="text-sm text-gray-600">Enter search terms:</label>
           <div className="flex items-center border border-gray-300 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-[#7A1114]/20 focus-within:border-[#7A1114] transition-all bg-white shadow-sm">
