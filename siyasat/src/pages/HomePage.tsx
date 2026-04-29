@@ -46,7 +46,7 @@ export default function HomePage({ recentTheses, onViewAll, onNavigate, onRead }
           </h1>
           
           <div className="border-r-8 border-white pr-6 py-2">
-            <p className="text-gray-100 text-[14px] md:text-[15px] max-w-[500px] leading-relaxed drop-shadow-md font-medium">
+            <p className="text-gray-100 text-[14px] md:text-[15px] max-w-[500px] leading-relaxed drop-shadow-md font-normal">
               Serves as the official institutional digital repository of the knowledge 
               and scholarly outputs of UP Mindanao. It aims to provide wider 
               dissemination and increase the visibility of the university's materials.
